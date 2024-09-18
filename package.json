@@ -1,0 +1,22 @@
+{
+  "name": "playwright_practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YevheniiAvdieienko/playwright_practice.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/YevheniiAvdieienko/playwright_practice/issues"
+  },
+  "homepage": "https://github.com/YevheniiAvdieienko/playwright_practice#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.47.1",
+    "@types/node": "^22.5.5"
+  }
+}
