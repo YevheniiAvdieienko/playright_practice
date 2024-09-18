@@ -1,1 +1,1 @@
-# playright_practice
+# playwright_practice
