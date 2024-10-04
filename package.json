@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "test": "playwright test"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/YevheniiAvdieienko/playwright_practice.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Yevhenii Avdieienko <yevhenii.avdieienko@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/YevheniiAvdieienko/playwright_practice/issues"

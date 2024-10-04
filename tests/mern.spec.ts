@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
  const emailIncrement = Math.ceil(Math.random() * 100);
 
 test('test registration', async ({ page }) => {
-  await page.goto('https://shopdemo-alex-hot.koyeb.app/register');
+  await page.goto('/register');
   
   //Fill registration form
   await page.locator("[name='email']").first().fill(`yevhenii.avdieienko${emailIncrement}@gmail.com`);
@@ -18,7 +18,7 @@ test('test registration', async ({ page }) => {
 });
 
 test('test contact us', async ({ page }) => {
-  await page.goto('https://shopdemo-alex-hot.koyeb.app/contact');
+  await page.goto('/contact');
 
   //Fill contact us form
   await page.locator("[name='name']").fill("Yevhenii");
@@ -31,14 +31,14 @@ test('test contact us', async ({ page }) => {
 });
 
 test('test purchase', async ({ page }) => {
-  await page.goto('https://shopdemo-alex-hot.koyeb.app/login');
+  await page.goto('/login');
 
 // login
   await page.locator('[name="email"]').first().fill('yevhenii.avdieienko@gmail.com')
   await page.locator('[name="password"]').fill('123456')
   await page.locator('[type="submit"]').first().click();
 
-// is login succesfull
+//Is login succesfull
   await expect(page.locator(".notification-success")).toBeVisible();
   expect(page.locator("[class='navbar-nav'] li").filter({ hasText: 'Yevhenii' })).toBeTruthy();
 
