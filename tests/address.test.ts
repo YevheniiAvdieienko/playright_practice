@@ -19,8 +19,6 @@ test( 'succesfully add address', async ({ page }) => {
         });
     
     const afterAdding = await app.dashboard.addresses.countNumberOfAddresses();
-    console.log(beforeAdding);
-    console.log(afterAdding);
     expect(afterAdding - beforeAdding).toEqual(1)
 });
 
