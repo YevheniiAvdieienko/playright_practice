@@ -23,7 +23,7 @@ export abstract class AppPage extends Component{
     public abstract pagePath: string;
 
     async open(path?: string){
-        await this.page.goto(path ?? this.pagePath)
+        await this.page.goto(path ?? this.pagePath);
         await this.expectLoaded();
     }
 }
