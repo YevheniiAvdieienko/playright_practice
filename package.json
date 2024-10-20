@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "playwright test"
+    "test": "playwright test",
+    "prepare": "husky && husky install"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,12 @@
   "homepage": "https://github.com/YevheniiAvdieienko/playwright_practice#readme",
   "devDependencies": {
     "@playwright/test": "^1.47.1",
-    "@types/node": "^22.5.5"
+    "@types/node": "^22.5.5",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "3.3.3"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   }
 }

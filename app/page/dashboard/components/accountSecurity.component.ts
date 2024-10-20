@@ -1,21 +1,27 @@
 import { expect } from "@playwright/test";
 import { Component } from "../../../abstractClasses";
 
+export class AccountSecurity extends Component {
+  private accountSecurityTitle = this.page.getByRole("heading", {
+    name: "Account Security",
+  });
+  private passwordField = this.page
+    .getByRole("textbox")
+    .getByPlaceholder("Old Password");
+  private confirmPasswordField = this.page
+    .getByRole("textbox")
+    .getByPlaceholder("Confirm Password");
+  private resetPasswordButton = this.page.getByRole("button", {
+    name: "Reset Password",
+  });
 
-export class AccountSecurity extends Component{
+  async expectLoaded(message?: string): Promise<void> {
+    expect(this.accountSecurityTitle).toHaveText("Account Security");
+  }
 
-    private accountSecurityContainer = this.page.locator('.account-security');
-    private passwordField = this.page.locator('[name="password"]');
-    private confirmPasswordField = this.page.locator('[name="confirmPassword"]');
-    private resetPasswordButton = this.page.locator('.reset-actions button');
-
-    async expectLoaded(message?: string): Promise<void> {
-        expect(this.accountSecurityContainer).toBeVisible();
-    }
-
-    async changePassword(oldPassword: string, newPassword: string){
-        await this.passwordField.fill(oldPassword);
-        await this.confirmPasswordField.fill(newPassword);
-        await this.resetPasswordButton.click();
-    }
+  async changePassword(oldPassword: string, newPassword: string) {
+    await this.passwordField.fill(oldPassword);
+    await this.confirmPasswordField.fill(newPassword);
+    await this.resetPasswordButton.click();
+  }
 }
