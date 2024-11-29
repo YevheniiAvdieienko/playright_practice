@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { loggedInUserTest } from "../";
+import { loggedInUserTest } from "../../fixtures";
 const messageIncrement = Math.ceil(Math.random() * 10000);
 
 loggedInUserTest("succesfully write to support", async ({ app }) => {
