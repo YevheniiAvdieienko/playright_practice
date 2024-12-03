@@ -3,7 +3,6 @@ import { loggedInUserTest } from "../../fixtures";
 const messageIncrement = Math.ceil(Math.random() * 10000);
 
 loggedInUserTest("succesfully write to support", async ({ app }) => {
-
   await app.dashboard.open();
   await app.dashboard.menu.openSupportTab();
   await app.dashboard.support.chooseAdminToWrite();
